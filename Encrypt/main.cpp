@@ -81,7 +81,19 @@ string vernam(string key, string plain_text)
 
 string row(string key, string plain_text)
 {
-	return string();
+	string cipher_text;
+	vector<int>key_int(key.size());	//vector for key in int type
+	vector<string> table(key.size());	//cipher table
+	for (int i = 0; i < key_int.size(); i++) {	//convert key from string into int in vector
+		key_int[i] = key[i] - '0';
+	}
+	for (int i = 0; i < plain_text.size(); i++) {
+		table[key_int[i%key_int.size()]-1].push_back(toupper(plain_text[i]));	//fiiling chars with the order of key
+	}
+	for (int i = 0; i < table.size(); i++) {
+		cipher_text += table[i];
+	}
+	return cipher_text;
 }
 
 string rail_fence(string key, string plain_text)

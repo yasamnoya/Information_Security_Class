@@ -4,4 +4,7 @@ c:\users\yiugetan\source\repos\information_security\hw1\encrypt\main.cpp(64): wa
 c:\users\yiugetan\source\repos\information_security\hw1\encrypt\main.cpp(67): warning C4018: '<': signed/unsigned 不相符
 c:\users\yiugetan\source\repos\information_security\hw1\encrypt\main.cpp(73): warning C4018: '<': signed/unsigned 不相符
 c:\users\yiugetan\source\repos\information_security\hw1\encrypt\main.cpp(76): warning C4018: '<': signed/unsigned 不相符
+c:\users\yiugetan\source\repos\information_security\hw1\encrypt\main.cpp(87): warning C4018: '<': signed/unsigned 不相符
+c:\users\yiugetan\source\repos\information_security\hw1\encrypt\main.cpp(90): warning C4018: '<': signed/unsigned 不相符
+c:\users\yiugetan\source\repos\information_security\hw1\encrypt\main.cpp(93): warning C4018: '<': signed/unsigned 不相符
   Encrypt.vcxproj -> C:\Users\yiugetan\source\repos\information_security\HW1\Debug\Encrypt.exe
