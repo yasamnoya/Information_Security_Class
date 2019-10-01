@@ -91,12 +91,28 @@ string row(string key, string plain_text)
 		table[key_int[i%key_int.size()]-1].push_back(toupper(plain_text[i]));	//fiiling chars with the order of key
 	}
 	for (int i = 0; i < table.size(); i++) {
-		cipher_text += table[i];
+		cipher_text += table[i];	//connect rows
 	}
 	return cipher_text;
 }
 
 string rail_fence(string key, string plain_text)
 {
-	return string();
+	int key_int = stoi(key);	//convert key into int type
+	vector<string> table(key_int);	//table for cipher
+	string cipher_text;
+	for (int i = 0,row=0; i < plain_text.size();) {
+		for (; i < plain_text.size() && row < key_int; i++,row++) {	//filling chars into table
+			table[row].push_back(toupper(plain_text[i]));
+		}
+		row-=2;	//out of bound
+		for (; i <plain_text.size() && row >=0 ; i++,row--) {
+			table[row].push_back(toupper(plain_text[i]));
+		}
+		row+=2;	//out of bound
+	}
+	for (int i = 0; i < table.size(); i++) {
+		cipher_text += table[i];	//connect rows
+	}
+	return cipher_text;
 }
