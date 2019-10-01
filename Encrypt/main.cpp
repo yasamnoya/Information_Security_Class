@@ -68,7 +68,7 @@ string vernam(string key, string plain_text)
 		key_telex[i] = (unsigned char)(key[i] - 'a' & 0x1F);	//convert each char in plain_text into telex form
 	}
 	for (int i = 0; key_telex.size() < plain_text_telex.size(); i++) {
-		key_telex.push_back(key_telex[i%key.size()]);	//expand key length to as long as plain_text_telex
+		key_telex.push_back(plain_text_telex[i]);	//expand key with autokey
 	}
 	for (int i = 0; i < plain_text_telex.size(); i++) {
 		cipher_text_telex[i] = (plain_text_telex[i] ^ key_telex[i])&0x1F;	//xor plaintext and key
