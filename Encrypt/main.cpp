@@ -40,15 +40,15 @@ int main(int argc, char** argv) {
 
 string caesar(string key, string plain_text)
 {
+	int key_int = stoi(key);
 	for (int i = 0; i < plain_text.size(); i++) {
-		int key_int = stoi(key);
-		plain_text = toupper(plain_text[i]);
+		plain_text[i] = toupper(plain_text[i]);
 		plain_text[i] += key_int;
 		if (plain_text[i] > 'Z') {
 			plain_text[i] -= 26;
 		}
 	}
-	return string();
+	return plain_text;
 }
 
 string playfair(string key, string plain_text)
