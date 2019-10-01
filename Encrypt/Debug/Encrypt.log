@@ -1,0 +1,3 @@
+﻿  main.cpp
+c:\users\yiugetan\source\repos\information_security\hw1\encrypt\main.cpp(43): warning C4018: '<': signed/unsigned 不相符
+  Encrypt.vcxproj -> C:\Users\yiugetan\source\repos\information_security\HW1\Debug\Encrypt.exe
