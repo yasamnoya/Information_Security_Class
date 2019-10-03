@@ -1,17 +1,1 @@
-﻿  main.cpp
-c:\users\yiugetan\source\repos\information_security\hw1\encrypt\main.cpp(45): warning C4018: '<': signed/unsigned 不相符
-c:\users\yiugetan\source\repos\information_security\hw1\encrypt\main.cpp(68): warning C4018: '<': signed/unsigned 不相符
-c:\users\yiugetan\source\repos\information_security\hw1\encrypt\main.cpp(96): warning C4018: '<': signed/unsigned 不相符
-c:\users\yiugetan\source\repos\information_security\hw1\encrypt\main.cpp(126): warning C4018: '<': signed/unsigned 不相符
-c:\users\yiugetan\source\repos\information_security\hw1\encrypt\main.cpp(129): warning C4018: '<': signed/unsigned 不相符
-c:\users\yiugetan\source\repos\information_security\hw1\encrypt\main.cpp(135): warning C4018: '<': signed/unsigned 不相符
-c:\users\yiugetan\source\repos\information_security\hw1\encrypt\main.cpp(138): warning C4018: '<': signed/unsigned 不相符
-c:\users\yiugetan\source\repos\information_security\hw1\encrypt\main.cpp(149): warning C4018: '<': signed/unsigned 不相符
-c:\users\yiugetan\source\repos\information_security\hw1\encrypt\main.cpp(152): warning C4018: '<': signed/unsigned 不相符
-c:\users\yiugetan\source\repos\information_security\hw1\encrypt\main.cpp(155): warning C4018: '<': signed/unsigned 不相符
-c:\users\yiugetan\source\repos\information_security\hw1\encrypt\main.cpp(166): warning C4018: '<': signed/unsigned 不相符
-c:\users\yiugetan\source\repos\information_security\hw1\encrypt\main.cpp(167): warning C4018: '<': signed/unsigned 不相符
-c:\users\yiugetan\source\repos\information_security\hw1\encrypt\main.cpp(171): warning C4018: '<': signed/unsigned 不相符
-c:\users\yiugetan\source\repos\information_security\hw1\encrypt\main.cpp(176): warning C4018: '<': signed/unsigned 不相符
-c:\users\yiugetan\source\repos\information_security\hw1\encrypt\main.cpp(92): warning C4715: '`playfair'::`2'::Table::find': 不是所有控制路徑都傳回值
-  Encrypt.vcxproj -> C:\Users\yiugetan\source\repos\information_security\HW1\Debug\Encrypt.exe
+﻿  Encrypt.vcxproj -> E:\1Files\偏上課\Information_Security_Class\Debug\Encrypt.exe

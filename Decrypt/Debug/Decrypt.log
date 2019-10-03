@@ -1,1 +1,19 @@
-﻿
+﻿  main.cpp
+e:\1files\偏上課\information_security_class\decrypt\main.cpp(45): warning C4018: '<': signed/unsigned 不相符
+e:\1files\偏上課\information_security_class\decrypt\main.cpp(68): warning C4018: '<': signed/unsigned 不相符
+e:\1files\偏上課\information_security_class\decrypt\main.cpp(96): warning C4018: '<': signed/unsigned 不相符
+e:\1files\偏上課\information_security_class\decrypt\main.cpp(148): warning C4018: '<': signed/unsigned 不相符
+e:\1files\偏上課\information_security_class\decrypt\main.cpp(159): warning C4018: '<': signed/unsigned 不相符
+e:\1files\偏上課\information_security_class\decrypt\main.cpp(162): warning C4018: '<': signed/unsigned 不相符
+e:\1files\偏上課\information_security_class\decrypt\main.cpp(165): warning C4018: '<': signed/unsigned 不相符
+e:\1files\偏上課\information_security_class\decrypt\main.cpp(172): warning C4018: '<': signed/unsigned 不相符
+e:\1files\偏上課\information_security_class\decrypt\main.cpp(184): warning C4018: '<': signed/unsigned 不相符
+e:\1files\偏上課\information_security_class\decrypt\main.cpp(187): warning C4018: '<': signed/unsigned 不相符
+e:\1files\偏上課\information_security_class\decrypt\main.cpp(191): warning C4018: '<': signed/unsigned 不相符
+e:\1files\偏上課\information_security_class\decrypt\main.cpp(196): warning C4018: '<': signed/unsigned 不相符
+e:\1files\偏上課\information_security_class\decrypt\main.cpp(206): warning C4018: '<': signed/unsigned 不相符
+e:\1files\偏上課\information_security_class\decrypt\main.cpp(212): warning C4018: '<': signed/unsigned 不相符
+e:\1files\偏上課\information_security_class\decrypt\main.cpp(247): warning C4018: '<': signed/unsigned 不相符
+e:\1files\偏上課\information_security_class\decrypt\main.cpp(252): warning C4018: '<': signed/unsigned 不相符
+e:\1files\偏上課\information_security_class\decrypt\main.cpp(92): warning C4715: '`playfair'::`2'::Table::find': 不是所有控制路徑都傳回值
+  Decrypt.vcxproj -> E:\1Files\偏上課\Information_Security_Class\Debug\Decrypt.exe
