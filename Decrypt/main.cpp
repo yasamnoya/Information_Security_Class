@@ -225,14 +225,24 @@ string rail_fence(string key, string cipher_text)
 	vector<int> table_length(key_int);
 	for (int i = 0; i < key_int; i++)
 	{
-		table_length[i] = cipher_text.size() / key_int;
+		table_length[i] = 0;
 	}
-	int temp = 0;
-	while (mod_nums > 0)
+	int position = 0;
+	int posneg = 1;
+	for (int i = 0; i < cipher_text.size(); i++)
 	{
-		table_length[temp]++;
-		temp++;
-		mod_nums--;
+		table_length[position]++;
+		position += posneg;
+		if (position == key_int)
+		{
+			posneg = -1;
+			position += 2*posneg;
+		}
+		else if (position < 0)
+		{
+			posneg = 1;
+			position += 2*posneg;
+		}
 	}
 	int count = 0;
 	for (int i = 0; i < key_int; i++)
@@ -244,10 +254,23 @@ string rail_fence(string key, string cipher_text)
 			table_length[i]--;
 		}
 	}
+	position = 0;
+	posneg = 1;
 	for (int i = 0; i < cipher_text.size(); i++)
 	{
-		plain_text += table[i%key_int][0];
-		table[i%key_int].erase(0, 1);
+		plain_text += table[position][0];
+		table[position].erase(0, 1);
+		position += posneg;
+		if (position == key_int)
+		{
+			posneg = -1;
+			position += 2 * posneg;
+		}
+		else if (position < 0)
+		{
+			posneg = 1;
+			position += 2 * posneg;
+		}
 	}
 	for (int i = 0; i < plain_text.size(); i++)
 	{
