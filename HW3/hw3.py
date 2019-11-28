@@ -9,16 +9,16 @@ class AESppm():
         self.length = int(string.split()[0])
         self.width = int(string.split()[1])
         self.depth = int(ppm_bin.readline()) 
-        self.pixels_bin = ppm_bin.readlines()
+        self.pixels_bin = ppm_bin.read()
     
     def __bytes__(self):
-        to_return = bytes("P6\n","utf-8")+bytes(str(self.length),'utf-8')+bytes(" ","utf-8")+bytes(str(self.width),'utf-8')+bytes("\n","utf-8")+bytes(str(self.depth),'utf-8')+bytes("\n","utf-8")
-        for line in self.pixels_bin:
-            to_return+= bytes(line)
+        to_return = bytes("P6\n","utf-8")+bytes(str(self.length),'utf-8')+bytes(" ","utf-8")+bytes(str(self.width),'utf-8')+bytes("\n","utf-8")+bytes(str(self.depth),'utf-8')+bytes("\n","utf-8")+self.pixels_bin
         return to_return
 
     def ecb(self,key,en_de) : #0=encrypt 1=decrypt
-        pass
+        if en_de==0:
+            pass
+
     def cbc(self,key,en_de) :
         pass
     def my(self,key,en_de) :
