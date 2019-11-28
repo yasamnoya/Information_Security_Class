@@ -12,7 +12,7 @@
             "request": "launch",
             "program": "${file}",
             "console": "integratedTerminal",
-            "args": ["./HW3/test.png","encrypt","ecb","ffffffffffffffff"]
+            "args": ["./HW3/input1.png","./HW3/input1_en.png" ,"encrypt","cool","00010203040506070809101112131415"]
         },
         {
             "name": "Python: Remote Attach",
