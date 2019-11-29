@@ -29,7 +29,7 @@ def bytes_xor(b1, b2): # use xor for bytes
 
 class AESppm():
     def __init__(self,ppm_bin):
-        string = ppm_bin.readline()
+        self.p_number = str(ppm_bin.readline(),"utf-8")
         string = ppm_bin.readline()
         self.length = int(string.split()[0])
         self.width = int(string.split()[1])
@@ -37,7 +37,7 @@ class AESppm():
         self.pixels_bin = ppm_bin.read()
     
     def __bytes__(self):
-        to_return = bytes("P6\n","utf-8")+bytes(str(self.length),'utf-8')+bytes(" ","utf-8")+bytes(str(self.width),'utf-8')+bytes("\n","utf-8")+bytes(str(self.depth),'utf-8')+bytes("\n","utf-8")+self.pixels_bin
+        to_return = bytes(self.p_number+"\n","utf-8")+bytes(str(self.length),'utf-8')+bytes(" ","utf-8")+bytes(str(self.width),'utf-8')+bytes("\n","utf-8")+bytes(str(self.depth),'utf-8')+bytes("\n","utf-8")+self.pixels_bin
         return to_return
 
     def ecb(self,key,en_de) : #0=encrypt 1=decrypt
@@ -100,13 +100,7 @@ class AESppm():
             vector = bytes_xor(processed_block,block)
         return to_return
     
-
-
-#cipher = AES.new(key, AES.MODE_ECB)
-#ciphertext = cipher.encrypt(one_block_text)
-
 if __name__ == "__main__":
-    # argv=[hw3.py, input filepath, output filepath, encrypt/decrypt, mode, key]
     if(len(argv)!=6):
         print("Arguments error")
         exit()
@@ -133,7 +127,7 @@ if __name__ == "__main__":
             ppm_file=ppm_file.cbc(key,en_de)
         elif(mode=="cool") :
             ppm_file=ppm_file.cool(key,en_de)
-        output_ppm_path = '/'.join(input_ppm_path.split('/')[:-1])+"/output.ppm"
+        output_ppm_path = "./output.ppm"
         with open(output_ppm_path,'wb') as output_ppm_bin :
             output_ppm_bin.write(bytes(ppm_file))
         with Image.open(output_ppm_path) as output_ppm :
