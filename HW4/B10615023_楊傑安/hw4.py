@@ -2,22 +2,6 @@ from sys import argv
 from random import choice, randint,random
 from math import gcd
 
-# class rsa_exponent():
-#     def __init__(self):
-#         self.exponent=[]
-
-#     def __init__(self,exponent):
-#         if type(exponent) == int:
-#             self.exponent=bin(exponent)[2:]
-
-#     def square_and_multiply(self,base):
-#         to_return=base
-#         for digit in self.exponent[1:]:
-#             to_return *= to_return
-#             if digit == '1':
-#                 to_return *= base
-#         return to_return
-
 def is_prime(n):
     for i in range(2,n//2+1):
         if n%i == 0:
@@ -68,8 +52,12 @@ def inverse(e,n):
 
 
 def init(mode,argv) :
-    p=generate_big_prime(4)
-    q=generate_big_prime(3)
+    p = generate_big_prime(6)
+    while not is_prime(p):
+        p = generate_big_prime(6)
+    q = generate_big_prime(5)
+    while not is_prime(q):
+        q=  generate_big_prime(5)
     n=p*q
     phi_of_n=(p-1)*(q-1)
     e = randint(2,phi_of_n)
@@ -115,7 +103,6 @@ def caller(mode,argv):
         function(mode,argv)
     else:
         print("arguments error")
-# print (exponent_mod(2,30,7))
-# exit()
+        
 if __name__ == "__main__":
     caller(argv[1],argv)
