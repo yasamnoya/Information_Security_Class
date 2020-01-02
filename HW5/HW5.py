@@ -78,9 +78,9 @@ if __name__ == '__main__':
     print("Message:", messagex)
     print("Producing numbers...")
     (p, q, times)= create_length(1024, 160)
-    print("p=",p,"q=",q)
+    print("p=",p,"\nq=",q)
     (h, d, alpha, beta) = find_nums(p, q, times)
-    print("h=",h,"d=",d,"alpha=",alpha,"beta=",beta)
+    print("h=",h,"\nd=",d,"\nalpha=",alpha,"\nbeta=",beta)
     print("Signing...")
     kE = rd.randint(1, q)
     r = square_and_multiply(alpha, kE, p)
@@ -101,7 +101,7 @@ if __name__ == '__main__':
     u2 = w * r % q
     v = square_and_multiply(alpha, u1, p) * square_and_multiply(beta, u2, p) % p % q
     print("v=",v)
-    if(r==s):
+    if(r==v):
         print("Valid correct!")
     else:
         print("Valid error!")
