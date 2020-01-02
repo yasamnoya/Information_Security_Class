@@ -5,11 +5,13 @@ from hashlib import sha1
 
 def create_length(lengthp,lengthq):
     q = rd.getrandbits(lengthq)
-    while(miller_rabin(q)==0):
+    while((miller_rabin(q)==0) or (q.bit_length()!=lengthq)):
+    # while(miller_rabin(q)==0):
         q = rd.getrandbits(lengthq)
     temp = rd.getrandbits(lengthp-lengthq)
     p = temp*q+1
     while((miller_rabin(p)==0) or (p.bit_length()!=lengthp)):
+    # while(miller_rabin(p)==0):
         temp = rd.getrandbits(lengthp-lengthq)
         p = temp*q+1
 #     if(p.bit_length()==lengthp):
@@ -72,26 +74,34 @@ def ext_gcd(a, b):
         y = x1 - a // b * y1 
         return r, x, y
 if __name__ == '__main__':
-    messagex = "suckmy"
+    messagex = sys.argv[1]
+    print("Message:", messagex)
+    print("Producing numbers...")
     (p, q, times)= create_length(1024, 160)
+    print("p=",p,"q=",q)
     (h, d, alpha, beta) = find_nums(p, q, times)
+    print("h=",h,"d=",d,"alpha=",alpha,"beta=",beta)
+    print("Signing...")
     kE = rd.randint(1, q)
     r = square_and_multiply(alpha, kE, p)
     r = r % q
     tempr, tempx, tempy = ext_gcd(kE, q)
     kEinverse = tempx
     SHA = sha1(messagex.encode('utf-8')).hexdigest()
-    print('SHA1:',SHA)
     SHA_int = int(SHA, 16)
     s = SHA_int + d * r
     s = s * kEinverse
     s = s % q
     print("r=",r, "s=",s)
     # verify
+    print("Verifying...")
     tempr, tempx, tempy = ext_gcd(s, q)
     w = tempx
     u1 = w * SHA_int % q
     u2 = w * r % q
     v = square_and_multiply(alpha, u1, p) * square_and_multiply(beta, u2, p) % p % q
     print("v=",v)
-      
+    if(r==s):
+        print("Valid correct!")
+    else:
+        print("Valid error!")
